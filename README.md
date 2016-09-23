@@ -14,7 +14,7 @@ ppp: Point-to-Point Protocol
 Se hace respaldo de los archivos originales:
 ```bash
 # cp /etc/ipsec.conf{,.bak}
-# cp /etc/ipsec.conf{,.bak}
+# cp /etc/ipsec.secrets{,.bak}
 # cp /etc/xl2tpd/xl2tpd.conf{,.bak}
 ```
 
