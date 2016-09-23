@@ -117,3 +117,8 @@ password mipasswordvpn
 
 Con esto como tal se termina la ejecución, hay que realizar la ejecución de conectarVPN.sh y de desconectarVPN.sh para obtener la conexión.
 
+#Referencias
+* https://wiki.archlinux.org/index.php/Openswan_L2TP/IPsec_VPN_client_setup
+* https://nobrega.com.br/howto-vpn-l2tp-pre-shared-key/
+* http://vpninfo.uz.gov.ua/instructions/linux/opensuse/13.2/
+
