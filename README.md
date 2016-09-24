@@ -2,12 +2,14 @@
 Un conjunto de instrucciones y script para conectarse a la VPN 2016 de la Universidad Distrital
 
 ##Instalación de dependencias:
-strongSwan: Es una completa implementación de IPsec, existe como alternativa a Openswan y Libreswan.
-xl2tpd: Es un software con la implementación del protocolo L2TP (Layer 2 Tunneling Protocol)
-ppp: Point-to-Point Protocol
+* strongSwan: Es una completa implementación de IPsec, existe como alternativa a Openswan y Libreswan.
+* xl2tpd: Es un software con la implementación del protocolo L2TP (Layer 2 Tunneling Protocol)
+* ppp: Point-to-Point Protocol
 
 ```bash
 # zypper in strongswan xl2tpd ppp
+# yum install -y strongswan xl2tpd ppp
+# apt-get install -y strongswan xl2tpd ppp
 ```
 ##Configuración de archivos de los servicios:
 
