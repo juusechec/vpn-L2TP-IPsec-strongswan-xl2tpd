@@ -118,7 +118,7 @@ debug
 lock
 connect-delay 5000
 name vpnoas8
-password mipasswordvpn
+password miclavevpn
 ```
 Se crean los recursos:
 ```bash
