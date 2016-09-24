@@ -8,6 +8,7 @@ Un conjunto de instrucciones y script para conectarse a la VPN 2016 de la Univer
 
 ```bash
 # zypper in strongswan xl2tpd ppp
+# dnf install strongswan xl2tpd ppp
 # yum install -y strongswan xl2tpd ppp
 # apt-get install -y strongswan xl2tpd ppp
 ```
