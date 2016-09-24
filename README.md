@@ -53,6 +53,7 @@ $ cat /etc/ipsec.secrets
 vpnoas8 : XAUTH "miclavevpn"
 
 # vim /etc/xl2tpd/xl2tpd.conf
+$ cat /etc/xl2tpd/xl2tpd.conf
 ;
 ; This is a minimal sample xl2tpd configuration file for use
 ; with L2TP over IPsec.
