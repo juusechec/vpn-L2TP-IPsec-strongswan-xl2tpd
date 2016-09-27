@@ -35,7 +35,7 @@ conn %default
         keyingtries=1
         keyexchange=ikev1
         authby=xauthpsk
-conn vpn-oas
+conn vpnoas
         keyexchange=ikev1
         type=transport
         authby=secret
