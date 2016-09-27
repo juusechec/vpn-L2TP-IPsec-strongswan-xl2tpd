@@ -7,18 +7,18 @@ Un conjunto de instrucciones y script para conectarse a la VPN 2016 de la Univer
 * ppp: Point-to-Point Protocol
 
 ```bash
-# zypper in strongswan xl2tpd ppp
-# dnf install strongswan xl2tpd ppp
-# yum install -y strongswan xl2tpd ppp
-# apt-get install -y strongswan xl2tpd ppp
+sudo zypper in strongswan xl2tpd ppp
+sudo dnf install strongswan xl2tpd ppp
+sudo yum install -y strongswan xl2tpd ppp
+sudo apt-get install -y strongswan xl2tpd ppp
 ```
 ##Configuración de archivos de los servicios:
 
 Se hace respaldo de los archivos originales:
 ```bash
-# cp /etc/ipsec.conf{,.bak}
-# cp /etc/ipsec.secrets{,.bak}
-# cp /etc/xl2tpd/xl2tpd.conf{,.bak}
+sudo cp /etc/ipsec.conf{,.bak}
+sudo cp /etc/ipsec.secrets{,.bak}
+sudo cp /etc/xl2tpd/xl2tpd.conf{,.bak}
 ```
 
 Se modifican los archivos con los respectivos datos de conexión:
@@ -35,7 +35,7 @@ conn %default
         keyingtries=1
         keyexchange=ikev1
         authby=xauthpsk
-conn vpn-uz
+conn vpn-oas
         keyexchange=ikev1
         type=transport
         authby=secret
