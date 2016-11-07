@@ -2,21 +2,29 @@
 Un conjunto de instrucciones y script para conectarse a la VPN 2016 de la Universidad Distrital
 
 ##Instalación de dependencias:
-strongSwan: Es una completa implementación de IPsec, existe como alternativa a Openswan y Libreswan.
-xl2tpd: Es un software con la implementación del protocolo L2TP (Layer 2 Tunneling Protocol)
-ppp: Point-to-Point Protocol
+* strongSwan: Es una completa implementación de IPsec, existe como alternativa a Openswan y Libreswan.
+* xl2tpd: Es un software con la implementación del protocolo L2TP (Layer 2 Tunneling Protocol)
+* ppp: Point-to-Point Protocol
 
 ```bash
-# zypper in strongswan xl2tpd ppp
+sudo zypper in strongswan xl2tpd ppp
+sudo dnf install strongswan xl2tpd ppp
+sudo yum install -y strongswan xl2tpd ppp
+sudo apt-get install -y strongswan xl2tpd ppp
 ```
 ##Configuración de archivos de los servicios:
+
+Se hace respaldo de los archivos originales:
 ```bash
-# #Se hace respaldo de los archivos originales
-# cp /etc/ipsec.conf{,.bak}
-# cp /etc/ipsec.conf{,.bak}
-# cp /etc/xl2tpd/xl2tpd.conf{,.bak}
-# #Se modifican los archivos con los respectivos datos de conexión
+sudo cp /etc/ipsec.conf{,.bak}
+sudo cp /etc/ipsec.secrets{,.bak}
+sudo cp /etc/xl2tpd/xl2tpd.conf{,.bak}
+```
+
+Se modifican los archivos con los respectivos datos de conexión:
+```bash
 # vim /etc/ipsec.conf
+$ cat /etc/ipsec.conf
 config setup
         strictcrlpolicy=no
         #charondebug="ike 4, knl 4, cfg 2"    #useful debugs
@@ -27,7 +35,7 @@ conn %default
         keyingtries=1
         keyexchange=ikev1
         authby=xauthpsk
-conn vpn-uz
+conn vpnoas
         keyexchange=ikev1
         type=transport
         authby=secret
@@ -40,10 +48,12 @@ conn vpn-uz
         auto=add
 
 # vim /etc/ipsec.secrets
+$ cat /etc/ipsec.secrets
 : PSK "clavePSK"
 vpnoas8 : XAUTH "miclavevpn"
 
 # vim /etc/xl2tpd/xl2tpd.conf
+$ cat /etc/xl2tpd/xl2tpd.conf
 ;
 ; This is a minimal sample xl2tpd configuration file for use
 ; with L2TP over IPsec.
@@ -93,6 +103,7 @@ pppoptfile = /etc/ppp/options.l2tpd.client
 length bit = yes
 
 # vim /etc/ppp/options.l2tpd.client
+$ cat /etc/ppp/options.l2tpd.client
 ipcp-accept-local
 ipcp-accept-remote
 refuse-eap
@@ -108,9 +119,10 @@ debug
 lock
 connect-delay 5000
 name vpnoas8
-password mipasswordvpn
-
-# #Se crean los recursos
+password miclavevpn
+```
+Se crean los recursos:
+```bash
 # mkdir -p /var/run/xl2tpd
 # touch /var/run/xl2tpd/l2tp-control
 ```
@@ -121,4 +133,5 @@ Con esto como tal se termina la ejecución, hay que realizar la ejecución de co
 * https://wiki.archlinux.org/index.php/Openswan_L2TP/IPsec_VPN_client_setup
 * https://nobrega.com.br/howto-vpn-l2tp-pre-shared-key/
 * http://vpninfo.uz.gov.ua/instructions/linux/opensuse/13.2/
+* http://www.jasonernst.com/2016/06/21/l2tp-ipsec-vpn-on-ubuntu-16-04/
 
