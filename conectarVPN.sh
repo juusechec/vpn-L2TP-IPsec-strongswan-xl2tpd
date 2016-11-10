@@ -9,7 +9,7 @@ fi
 $SUDO systemctl start strongswan.service
 $SUDO systemctl start xl2tpd.service
 # rationale: se espera un momento mientras Started strongSwan IPsec
-sleep 2
+sleep 1
 #$SUDO systemctl status strongswan.service
 #$SUDO systemctl status xl2tpd.services
 $SUDO ipsec up vpnoas
