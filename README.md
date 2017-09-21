@@ -1,7 +1,7 @@
 # vpn-L2TP-IPsec-strongswan-xl2tpd
 Un conjunto de instrucciones y script para conectarse a la VPN 2016 de la Universidad Distrital
 
-##Instalación de dependencias:
+## Instalación de dependencias:
 * strongSwan: Es una completa implementación de IPsec, existe como alternativa a Openswan y Libreswan.
 * xl2tpd: Es un software con la implementación del protocolo L2TP (Layer 2 Tunneling Protocol)
 * ppp: Point-to-Point Protocol
@@ -12,7 +12,7 @@ sudo dnf install strongswan xl2tpd ppp
 sudo yum install -y strongswan xl2tpd ppp
 sudo apt-get install -y strongswan xl2tpd ppp
 ```
-##Configuración de archivos de los servicios:
+## Configuración de archivos de los servicios:
 
 Se hace respaldo de los archivos originales:
 ```bash
@@ -129,7 +129,7 @@ Se crean los recursos:
 
 Con esto como tal se termina la ejecución, hay que realizar la ejecución de conectarVPN.sh y de desconectarVPN.sh para obtener la conexión.
 
-#Referencias
+# Referencias
 * https://wiki.archlinux.org/index.php/Openswan_L2TP/IPsec_VPN_client_setup
 * https://nobrega.com.br/howto-vpn-l2tp-pre-shared-key/
 * http://vpninfo.uz.gov.ua/instructions/linux/opensuse/13.2/
