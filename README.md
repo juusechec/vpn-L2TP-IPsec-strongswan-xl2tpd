@@ -135,9 +135,17 @@ sudo mv /etc/ipsec.conf{.bak,}
 sudo mv /etc/ipsec.secrets{.bak,}
 sudo mv /etc/xl2tpd/xl2tpd.conf{.bak,}
 
+Si aún con estos pasos no te funciona, te convendía leer el hilo https://bugs.launchpad.net/ubuntu/+source/network-manager-l2tp/+bug/1726135 . En este básicamente se dice qué los errores relacionados a conexión están relacionados a la ruptura del algoritmo de cifrado VPN que use el servidor, por lo cuál ya no es soportado de manera predeterminada por libreswang y openswan.
+
+En el log de eventos se puede ver algo así:
+```sh
+received NO_PROPOSAL_CHOSEN error notify
+```
+
 # Referencias
 * https://wiki.archlinux.org/index.php/Openswan_L2TP/IPsec_VPN_client_setup
 * https://nobrega.com.br/howto-vpn-l2tp-pre-shared-key/
 * http://vpninfo.uz.gov.ua/instructions/linux/opensuse/13.2/
 * http://www.jasonernst.com/2016/06/21/l2tp-ipsec-vpn-on-ubuntu-16-04/
+* https://github.com/nm-l2tp/network-manager-l2tp
 
