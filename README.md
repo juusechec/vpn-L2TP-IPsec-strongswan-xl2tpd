@@ -129,6 +129,12 @@ Se crean los recursos:
 
 Con esto como tal se termina la ejecución, hay que realizar la ejecución de conectarVPN.sh y de desconectarVPN.sh para obtener la conexión.
 
+Si quieres revertir los cambios.
+
+sudo mv /etc/ipsec.conf{.bak,}
+sudo mv /etc/ipsec.secrets{.bak,}
+sudo mv /etc/xl2tpd/xl2tpd.conf{.bak,}
+
 # Referencias
 * https://wiki.archlinux.org/index.php/Openswan_L2TP/IPsec_VPN_client_setup
 * https://nobrega.com.br/howto-vpn-l2tp-pre-shared-key/
